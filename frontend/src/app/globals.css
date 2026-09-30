@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #070b14;
+  --foreground: #e8eef9;
+  --panel: rgba(15, 23, 42, 0.72);
+  --panel-border: rgba(148, 163, 184, 0.14);
+  --teal: #2dd4bf;
+  --amber: #fbbf24;
+  --rose: #fb7185;
+  --emerald: #34d399;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border p-5 backdrop-blur-md;
+    background: var(--panel);
+    border-color: var(--panel-border);
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500;
+  }
+
+  .panel-title {
+    @apply mt-1 text-lg font-semibold tracking-tight text-slate-50;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-md border px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide;
+  }
+
+  .badge-muted {
+    @apply border-white/10 bg-white/5 text-slate-300;
+  }
+
+  .badge-teal {
+    @apply border-teal-400/30 bg-teal-400/10 text-teal-200;
+  }
+
+  .badge-amber {
+    @apply border-amber-400/30 bg-amber-400/10 text-amber-200;
+  }
+
+  .badge-rose {
+    @apply border-rose-400/30 bg-rose-400/10 text-rose-200;
+  }
+
+  .badge-emerald {
+    @apply border-emerald-400/30 bg-emerald-400/10 text-emerald-200;
+  }
+
+  .btn-primary {
+    @apply rounded-xl bg-teal-400 px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-teal-300;
+  }
+
+  .terminal-surface {
+    background:
+      linear-gradient(180deg, rgba(2, 6, 23, 0.92), rgba(2, 6, 23, 0.98)),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.015) 2px,
+        rgba(255, 255, 255, 0.015) 4px
+      );
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+}
